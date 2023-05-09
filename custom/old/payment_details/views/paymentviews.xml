@@ -1,0 +1,26 @@
+<odoo>
+
+    <record id = "payment_details_form_view" model="ir.ui.view">
+        <field name ="name">Payment Details Form</field>
+        <field name = "model">payment.details</field>
+        <field name = "arch" type="xml">
+            <form string = "payment">
+                <group>
+                    <group>
+                        <field name="informations"/>
+                        <field name="luggagetype"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_details_action" model="ir.actions.act_window">
+        <field name="name">Payment Details</field>
+        <field name="res_model">payment.details</field>
+        <field name="view_mode">form</field>
+    </record>
+
+<menuitem id = "payment_detals_action_menu" action="payment_details_action" name="payments"/>
+           
+</odoo>

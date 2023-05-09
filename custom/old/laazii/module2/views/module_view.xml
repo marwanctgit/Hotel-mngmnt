@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id ="test_module2_form_view" model="ir.ui.view">
+        <field name ="name">Test module 2 Form</field>
+        <field name ="model">test.module2</field>
+        <field name ="arch" type="xml">
+            <form string="Test module 2">
+              <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>         
+                        </group>
+                        <group>
+                            <field name="age"/>
+                        </group>
+                    </group>
+                </sheet>            
+            </form>
+        </field>
+    </record>
+
+    <record id="test_module2_tree_view" model="ir.ui.view">
+        <field name="name">Test Module 2 Tree</field>
+        <field name="model">test.module2</field>
+        <field name="arch" type="xml">
+            <tree string="Test Module">
+                <field name="name"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="test_module2_action" model="ir.actions.act_window">
+        <field name="name">Test Module 2</field>
+        <field name="res_model">test.module2</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
+             
+
+            
+
+
+
+
+                    
+           
+

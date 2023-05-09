@@ -1,0 +1,58 @@
+<odoo>
+
+    <data>
+        <record id="action_report_office_module" model="ir.actions.report">
+            <field name="name">Office Module</field>
+            <field name="model">office.module</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">office_module.report_office_module</field>
+            <field name="report_file">office_module.report_office_module</field>
+            <field name="print_report_name">'Office Module Report'</field>
+            <field name="binding_model_id" ref="office_module.model_office_module"></field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+    <template id="report_office_module">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="office_module.report_office_module_document" >
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_office_module_document">
+        <t t-call="web.external_layout">
+        </t>
+    </template>
+
+    <template id="report_office_module_document">
+        <t t-call="web.external_layout">
+            <h3 class="text-center">
+                Office Module for <span t-field="doc.employee"></span>
+            </h3>
+            <table class="table table-sm o_main_table">
+                <tbody>
+                    <tr>
+                        <td>Name:</td>
+                        <td><span t-field="doc.employee"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Adress:</td>
+                        <td><span t-field="doc.number"></span></td>
+                    </tr>
+                    <tr>
+                        <td>DateofBirth:</td>
+                        <td><span t-field="doc.dateofbirth"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td><span t-field="doc.gender"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </t>
+    </template>
+          
+</odoo>

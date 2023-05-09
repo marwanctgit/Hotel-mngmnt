@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="shipping">
+                <group string="Delivery">
+                    <field name="commitment_date"/>
+                </group>
+                <group string="Customer Details">
+                    <field name="client_order_ref"/>
+                </group>
+                </page>
+            </notebook> 
+        </field>
+    </record>
+</odoo>

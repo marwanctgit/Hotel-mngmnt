@@ -1,0 +1,98 @@
+<odoo>
+
+    <record id = "teacher_details_form_view" model = "ir.ui.view">
+        <field name = "name"> Teacher Details </field>
+        <field name = "model">teacher.details</field>
+        <field name = "arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name ="teachername"/>
+                        <field name ="gender"/>
+                    </group>
+                    <group>
+                        <field name ="adress"/>
+                        <field name ="dateofbirth"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>    
+            </form>
+        </field>
+    </record>
+    <record id = "teacher_details_tree_view" model = "ir.ui.view">
+        <field name = "name">Teacher Details </field>
+        <field name = "model">teacher.details</field>
+        <field name = "arch" type="xml">
+            <tree>
+                <field name ="teachername"/>
+            </tree>
+        </field>
+    </record>
+    <record id="teacher_details_action" model="ir.actions.act_window">
+        <field name="name">Teacher Details</field>
+        <field name="res_model">teacher.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="teacher_details_action_menu" action="teacher_details_action" name="teacher"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id = "shipping_details_form_view" model="ir.ui.view">
+        <field name ="name">Shipping Details Form</field>
+        <field name = "model">shipping.details</field>
+        <field name = "arch" type="xml">
+            <form string = "shipping">
+                <group>
+                    <group>
+                        <field name="informations"/>
+                        <field name="luggagetype"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="shipping_details_action" model="ir.actions.act_window">
+        <field name="name">Shipping Details</field>
+        <field name="res_model">shipping.details</field>
+        <field name="view_mode">form</field>
+    </record>
+
+<menuitem id = "shipping_detals_action_menu" action="shipping_details_action" name="shipping"/>
+           
+</odoo>
+

@@ -1,0 +1,87 @@
+<odoo>
+
+    <record id="new_products_form_view" model="ir.ui.view">
+        <field name="name">New Products Form</field>
+        <field name="model">new.products</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field name="productname"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group>
+                            <field name="productcost"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id = "new_products_tree_view" model="ir.ui.view">
+        <field name="name"> New Products Tree</field>
+        <field name="model">new.products</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="productname"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id = "new_products_kanban_view" model="ir.ui.view">
+        <field name="name"> New Products Kanban</field>
+        <field name="model">new.products</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name = "productname"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Food Item : <field name="productname"/>
+                                    </li>
+                                    <li>
+                                        Category : <field name="category_id"/>
+                                    </li>
+                                    <li>
+                                        price : <field name="productcost"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="new_products_action" model="ir.actions.act_window">
+        <field name="name">New Products</field>
+        <field name="res_model">new.products</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    
+<menuitem id = "new_products_action_menu" action="new_products_action" name="FoodItems" parent="hotel_room_action_menu" sequence="30"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</odoo>

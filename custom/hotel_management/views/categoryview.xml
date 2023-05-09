@@ -1,0 +1,65 @@
+<odoo>
+
+    <record id="products_categories_form_view" model="ir.ui.view">
+        <field name="name">Products Categories Form</field>
+        <field name="model">products.categories</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="categories"/>
+                            <field name="food_item_ids"  widget ="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="products_categories_tree_view" model="ir.ui.view">
+        <field name="name">Products Categories Tree</field>
+        <field name="model">products.categories</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="categories"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="products_categories_kanban_view" model="ir.ui.view">
+        <field name="name">Products Categories Kanban</field>
+        <field name="model">products.categories</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="categories"/>
+                <field name="food_item_ids"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Meal Type : <field name="categories"/>
+                                    </li>
+                                    <li>
+                                        Item : <field name="food_item_ids"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+                    
+    <record id="products_categories_action" model="ir.actions.act_window">
+        <field name="name">Products Categories</field>
+        <field name="res_model">products.categories</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem id = "products_categories_action" action="products_categories_action" name="Categories" parent="hotel_room_action_menu" sequence="40"/>
+
+</odoo>

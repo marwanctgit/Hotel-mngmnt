@@ -1,0 +1,19 @@
+<odoo>
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Payment Terms">
+                <group string="Documents">
+                    <field name="origin"/>
+                </group>
+                <group string="Payment Time">
+                    <field name="payment_term_id"/>
+                </group>
+                </page>
+            </notebook> 
+        </field>
+    </record>
+</odoo>

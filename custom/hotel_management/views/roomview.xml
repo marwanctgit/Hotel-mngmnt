@@ -1,0 +1,79 @@
+<odoo>
+
+    <record id = "hotel_room_form_view" model="ir.ui.view">
+        <field name="name">Hotel Room Form</field>
+        <field name="model">hotel.room</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image_rom" widget="image" class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="customer_id"/>
+                            <field name="bed"/>
+                        </group>
+                        <group>
+                            <field name="cost"/>
+                            <field name="facility_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id = "hotel_room_tree_view" model="ir.ui.view">
+        <field name="name"> Hotel Room Tree</field>
+        <field name="model">hotel.room</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id = "hotel_room_kanban_view" model="ir.ui.view">
+        <field name="name"> Hotel Room Tree</field>
+        <field name="model">hotel.room</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="bed"/>
+                <field name="id"/>
+                <field name="image_rom"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img class="o_kanban_image_inner_pic"
+                                    t-att-src="kanban_image('hotel.room','image_rom',record.id.raw_value)"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Room : <field name="name"/>
+                                    </li>
+                                    <li>
+                                        Bed Type : <field name="bed"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="hotel_room_action" model="ir.actions.act_window">
+        <field name="name">Hotel Room</field>
+        <field name="res_model">hotel.room</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem id = "hotel_room_action_menu"  name="Config" parent="hotel_management_action_menu"/>
+     <menuitem id = "hotel_room"  name="Rooms" 
+     action="hotel_room_action" parent="hotel_room_action_menu" sequence="10"/>
+     
+</odoo>

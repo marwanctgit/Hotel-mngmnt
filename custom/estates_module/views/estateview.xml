@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id="estates_module_form_view" model="ir.ui.view">
+        <field name="name">Estates Module Form</field>
+        <field name="model">estates.module</field>
+        <field name="arch" type="xml">
+            <form string="Test Module">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="customer_id"/>
+                        </group>
+                        <group>
+                            <field name="number"/>
+                            <field name="address"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Other Details">
+                        <group>
+                            <field name="image"/>
+                        </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="estates_module_tree_view" model="ir.ui.view">
+        <field name="name">Estates Module Tree</field>
+        <field name="model">estates.module</field>
+        <field name="arch" type="xml">
+            <tree string="Estates Module">
+                <field name="customer_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="estates_module_action" model="ir.actions.act_window">
+        <field name="name">Estates Module</field>
+        <field name="res_model">estates.module</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+<menuitem id="estates_module_action_menu" action="estates_module_action" name="Estates"/>
+           
+</odoo>

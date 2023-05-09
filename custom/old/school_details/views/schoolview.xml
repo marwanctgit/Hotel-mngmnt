@@ -1,0 +1,59 @@
+<odoo>
+
+    <record id="school_details_form_view" model = "ir.ui.view">
+        <field name= "name">School Details Form</field>
+        <field name= "model">school.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="studentname"/>
+                        </group>
+                        <group>
+                            <field name="rollnumber"/>
+                            <field name="gender"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_details_tree_view" model="ir.ui.view">
+        <field name="name">School Details Tree </field>
+        <field name="model">school.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="studentname"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_details_action" model="ir.actions.act_window">
+        <field name="name">School Details</field>
+        <field name="res_model">school.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="school_details_action_menu" action="school_details_action" name="school"/>
+</odoo>
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+

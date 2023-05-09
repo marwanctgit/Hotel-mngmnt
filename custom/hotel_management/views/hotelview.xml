@@ -1,0 +1,64 @@
+<odoo>
+
+    <record id = "hotel_management_form_view" model="ir.ui.view">
+        <field name="name">Hotel Management Form</field>
+        <field name="model">hotel.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="roomnumber"/>
+                        </group>
+                        <group>
+                            <field name="bed"/>
+                            <field name="rent"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id = "hotel_management_tree_view" model="ir.ui.view">
+        <field name="name"> Hotel Management Tree</field>
+        <field name="model">hotel.management</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="roomnumber"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hotel_management_search_view" model="ir.ui.view">
+        <field name="name">Hotel Management Search</field>
+        <field name="model">hotel.management</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="roomnumber"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="hotel_management_action" model="ir.actions.act_window">
+        <field name="name">Hotel Management</field>
+        <field name="res_model">hotel.management</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id = "hotel_management_action_menu" action="hotel_management_action" name="Hotel"/>
+
+                        
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+</odoo>
